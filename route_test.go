@@ -15,6 +15,10 @@ import (
 	"golang.org/x/sys/unix"
 )
 
+func init() {
+	nl.EnableErrorMessageReporting = true
+}
+
 func TestRouteAddDel(t *testing.T) {
 	tearDown := setUpNetlinkTest(t)
 	defer tearDown()
